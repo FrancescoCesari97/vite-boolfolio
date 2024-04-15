@@ -1,30 +1,26 @@
 <script>
-import axios from 'axios';
+// import axios from 'axios';
 
-import {store} from './store';
+// import {store} from './store';
 
 import AppHeader from './components/AppHeader.vue';
+
+import ProjectList from './components/ProjectList.vue';
 
   export default {
     data(){
       return {
         title: 'Vite Boolfolio',
 
-        store,
+    
 
       };
     },
 
 
-    components: { AppHeader },
+    components: { AppHeader, ProjectList },
 
-    created(){
-      axios.get(store.api.baseUrl + 'projects').then((response) => {
-        store.projects = response.data.data
 
-      });
-
-    }
   };
 </script>
 
@@ -35,17 +31,8 @@ import AppHeader from './components/AppHeader.vue';
   <div class="container">
     <h1>{{ title }}</h1>
 
-    
-    <div class="row">
-        <div v-for="project in store.projects" class="col-4 g-3">
-          <div class="card h-100">
-            <h3>{{ project.title }}</h3>
-
-            <p>{{ project.content }}</p>
-          </div>
-        </div>
-      
-    </div>
+    <project-list/>
+   
   </div>
 </template>
 
