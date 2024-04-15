@@ -8,13 +8,16 @@ import {store} from './store';
       return {
         title: 'Vite Boolfolio',
 
-        projects: [],
+
+        store,
+
+      
       };
     },
 
     created(){
       axios.get(store.api.baseUrl + 'projects').then((response) => {
-        this.projects = response.data.data
+        store.projects = response.data.data
 
       });
 
@@ -28,7 +31,7 @@ import {store} from './store';
 
     
     <div class="row">
-        <div v-for="project in projects" class="col-4 g-3">
+        <div v-for="project in store.projects" class="col-4 g-3">
           <div class="card h-100">
             <h3>{{ project.title }}</h3>
 
