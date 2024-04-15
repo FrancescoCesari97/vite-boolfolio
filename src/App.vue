@@ -3,6 +3,8 @@ import axios from 'axios';
 
 import {store} from './store';
 
+import AppHeader from './components/AppHeader.vue';
+
   export default {
     data(){
       return {
