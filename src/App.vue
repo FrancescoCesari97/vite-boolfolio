@@ -10,12 +10,13 @@ import AppHeader from './components/AppHeader.vue';
       return {
         title: 'Vite Boolfolio',
 
-
         store,
 
-      
       };
     },
+
+
+    components: { AppHeader },
 
     created(){
       axios.get(store.api.baseUrl + 'projects').then((response) => {
@@ -28,6 +29,9 @@ import AppHeader from './components/AppHeader.vue';
 </script>
 
 <template>
+
+  <app-header :title="title"/>
+
   <div class="container">
     <h1>{{ title }}</h1>
 
