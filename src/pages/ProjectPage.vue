@@ -1,6 +1,6 @@
 <script>
 
-import ProjectList from './components/ProjectList.vue';
+import ProjectList from '../components/ProjectList.vue';
 
   export default {
     data(){
@@ -28,6 +28,6 @@ import ProjectList from './components/ProjectList.vue';
 </template>
 
 <style  lang="scss">
-  @import'/src/scss/general.scss';
+ 
 </style>
 
