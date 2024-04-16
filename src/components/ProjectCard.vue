@@ -35,7 +35,7 @@ export default {
                 </div>
 
 
-                <a href="" class="btn btn-primary">dettaglio</a>
+                <router-link :to="{ name: 'projectDetail', params: { id: project.id } }" class="btn btn-primary">dettaglio</router-link>
             </div>
         </div>
         
