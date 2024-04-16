@@ -23,7 +23,7 @@ import ProjectCard from '../components/ProjectCard.vue';
    created() {
     const projectSlug = this.$route.params.slug
     axios.get(store.api.baseUrl + `projects/${projectSlug}`).then((response) => {
-       this.project = response.data;
+       this.project = response.data.result;
     });
 
 
@@ -37,7 +37,7 @@ import ProjectCard from '../components/ProjectCard.vue';
 
  
     <div class="row">
-        <project-card :project="project" :isDetail="true"/>
+        <project-card v-if="project" :project="project" :isDetail="true"/>
 
     </div>
 

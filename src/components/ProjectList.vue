@@ -17,9 +17,9 @@ export default {
   methods: {
     fetchProjects(endpoint = store.api.baseUrl + 'projects') {
       axios.get(endpoint).then((response) => {
-        store.projects = response.data.data;
+        store.projects = response.data.result.data;
 
-        this.pagination = response.data.links;
+        this.pagination = response.data.result.links;
     });
     },
   },
