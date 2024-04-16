@@ -4,6 +4,8 @@ import HomePage from "./pages/HomePage.vue";
 
 import ProjectPage from "./pages/ProjectPage.vue";
 
+import ProjectPageDetail from "./pages/ProjectPageDetail.vue";
+
 const router = createRouter({
   history: createWebHistory(),
 
@@ -17,6 +19,11 @@ const router = createRouter({
       path: "/project",
       name: "project",
       component: ProjectPage,
+    },
+    {
+      path: "/projectDetail/:id",
+      name: "projectDetail",
+      component: ProjectPageDetail,
     },
   ],
 });
