@@ -6,6 +6,8 @@ import ProjectPage from "./pages/ProjectPage.vue";
 
 import ProjectPageDetail from "./pages/ProjectPageDetail.vue";
 
+import NotFoudPage from "./pages/NotFoudPage.vue";
+
 const router = createRouter({
   history: createWebHistory(),
 
@@ -24,6 +26,12 @@ const router = createRouter({
       path: "/projectDetail/:slug",
       name: "projectDetail",
       component: ProjectPageDetail,
+    },
+
+    {
+      path: "/:pathMatch(.*)",
+      name: "not-found",
+      component: NotFoudPage,
     },
   ],
 });
