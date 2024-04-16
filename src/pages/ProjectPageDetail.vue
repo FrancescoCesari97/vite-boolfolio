@@ -23,7 +23,12 @@ import ProjectCard from '../components/ProjectCard.vue';
    created() {
     const projectSlug = this.$route.params.slug
     axios.get(store.api.baseUrl + `projects/${projectSlug}`).then((response) => {
-       this.project = response.data.result;
+        if(response.data.success){
+            
+            this.project = response.data.result;
+        } else {
+            this.$router.push({ name: 'not-found', params:{ pathMatch: '404'} });
+        }
     });
 
 
