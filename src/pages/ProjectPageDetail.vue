@@ -1,14 +1,28 @@
 <script>
 
+import axios from 'axios';
+
+import {store} from '../store';
+
   export default {
-    // data(){
-    //   return {
-        
+
+    data(){
+      return {
+        project: null
 
     
 
-    //   };
-    // },
+      };
+    },
+
+   created() {
+    const projectSlug = this.$route.params.slug
+    axios.get(store.api.baseUrl + `projects/${projectSlug}`).then((response) => {
+       this.project = response.data;
+    });
+
+
+   },
 
 
   };
@@ -17,7 +31,7 @@
 <template>
 
  
-    <h1>dettaglio project</h1>
+    <h1>dettaglio project {{ $route.params.slug }}</h1>
 
 
 </template>
