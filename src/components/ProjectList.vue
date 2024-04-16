@@ -3,6 +3,8 @@ import { store } from "../store";
 import axios from "axios";
 
 import ProjectCard from "./ProjectCard.vue";
+
+import PaginationUi from "./UserInterface/PaginationUi.vue"
 export default {
   data() {
     return {
@@ -22,7 +24,7 @@ export default {
     },
   },
 
-  components: { ProjectCard },
+  components: { ProjectCard, PaginationUi },
 
   created() {
     this.fetchProjects();
@@ -31,11 +33,18 @@ export default {
 </script>
 
 <template>
+
+  <pagination-ui @change-page="fetchProjects" :pagination="pagination"/>
+
+
   <div class="row row-col-4 g-3">
     <project-card v-for="project in store.projects" :project="project" />
   </div>
 
-  <nav aria-label="Page navigation example ">
+  <pagination-ui @change-page="fetchProjects" :pagination="pagination"/>
+
+
+  <!-- <nav aria-label="Page navigation example ">
     <ul class="pagination my-3">
       <li class="page-item" >
         
@@ -51,7 +60,7 @@ export default {
      
       <li class="page-item"></li>
     </ul>
-  </nav>
+  </nav> -->
 </template>
 
 <style lang="scss"></style>
