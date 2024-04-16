@@ -5,7 +5,7 @@
 
 import AppHeader from './components/AppHeader.vue';
 
-import ProjectList from './components/ProjectList.vue';
+// import ProjectList from './components/ProjectList.vue';
 
   export default {
     data(){
@@ -18,7 +18,7 @@ import ProjectList from './components/ProjectList.vue';
     },
 
 
-    components: { AppHeader, ProjectList },
+    components: { AppHeader },
 
 
   };
@@ -31,7 +31,9 @@ import ProjectList from './components/ProjectList.vue';
   <div class="container">
     <h1>{{ title }}</h1>
 
-    <project-list/>
+    <router-view></router-view>
+
+    <!-- <project-list/> -->
    
   </div>
 </template>
