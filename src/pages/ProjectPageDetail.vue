@@ -4,6 +4,9 @@ import axios from 'axios';
 
 import {store} from '../store';
 
+
+import ProjectCard from '../components/ProjectCard.vue';
+
   export default {
 
     data(){
@@ -14,6 +17,8 @@ import {store} from '../store';
 
       };
     },
+
+    components: {ProjectCard},
 
    created() {
     const projectSlug = this.$route.params.slug
@@ -31,7 +36,11 @@ import {store} from '../store';
 <template>
 
  
-    <h1>dettaglio project {{ $route.params.slug }}</h1>
+    <div class="row">
+        <project-card :project="project" :isDetail="true"/>
+
+    </div>
+
 
 
 </template>
